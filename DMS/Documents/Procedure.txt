@@ -1,0 +1,20 @@
+SET QUOTED_IDENTIFIER ON 
+GO
+SET ANSI_NULLS ON 
+GO
+
+ALTER  PROC GetTestName
+@m_code varchar(2),
+@pat_id varchar(10)
+AS
+
+	select  test_name from test_result where  m_code=@m_code and
+	s_code in(select s_code from pat_info_sub1 where pat_id=@pat_id and  m_code=@m_code)
+
+
+GO
+SET QUOTED_IDENTIFIER OFF 
+GO
+SET ANSI_NULLS ON 
+GO
+

@@ -1,0 +1,34 @@
+Line 205: Class MSComCtl2.DTPicker of control stDT_TM was not a loaded control class.
+Line 220: Class MSComCtl2.DTPicker of control stDt was not a loaded control class.
+Line 235: Class MSComCtl2.DTPicker of control edDT_TM was not a loaded control class.
+Line 250: Class MSComCtl2.DTPicker of control edDt was not a loaded control class.
+Line 212: The property name _ExtentX in stDT_TM is invalid.
+Line 213: The property name _ExtentY in stDT_TM is invalid.
+Line 214: The property name _Version in stDT_TM is invalid.
+Line 215: The property name CustomFormat in stDT_TM is invalid.
+Line 216: The property name Format in stDT_TM is invalid.
+Line 217: The property name UpDown in stDT_TM is invalid.
+Line 218: The property name CurrentDate in stDT_TM is invalid.
+Line 226: The property name _ExtentX in stDt is invalid.
+Line 227: The property name _ExtentY in stDt is invalid.
+Line 228: The property name _Version in stDt is invalid.
+Line 229: The property name CalendarForeColor in stDt is invalid.
+Line 230: The property name CalendarTitleBackColor in stDt is invalid.
+Line 231: The property name CalendarTitleForeColor in stDt is invalid.
+Line 232: The property name Format in stDt is invalid.
+Line 233: The property name CurrentDate in stDt is invalid.
+Line 242: The property name _ExtentX in edDT_TM is invalid.
+Line 243: The property name _ExtentY in edDT_TM is invalid.
+Line 244: The property name _Version in edDT_TM is invalid.
+Line 245: The property name CustomFormat in edDT_TM is invalid.
+Line 246: The property name Format in edDT_TM is invalid.
+Line 247: The property name UpDown in edDT_TM is invalid.
+Line 248: The property name CurrentDate in edDT_TM is invalid.
+Line 256: The property name _ExtentX in edDt is invalid.
+Line 257: The property name _ExtentY in edDt is invalid.
+Line 258: The property name _Version in edDt is invalid.
+Line 259: The property name CalendarForeColor in edDt is invalid.
+Line 260: The property name CalendarTitleBackColor in edDt is invalid.
+Line 261: The property name CalendarTitleForeColor in edDt is invalid.
+Line 262: The property name Format in edDt is invalid.
+Line 263: The property name CurrentDate in edDt is invalid.

@@ -1,0 +1,39 @@
+CREATE PROCEDURE St_Balance
+
+@status int
+As
+
+SET NOCOUNT ON
+
+if @status=1
+
+begin
+
+--drop table #Stk_Balance
+
+	CREATE TABLE [#Stk_Balance] (
+		[Item_code] [varchar] (45) NULL ,
+		[Name_of_reagent] [varchar] (45) NULL ,
+		[pur_qty] [int] NULL ,
+		[itm_issue] [int] NULL
+	)
+	insert into #Stk_Balance
+	select distinct p.item_code,i.item_name,qty=sum(p.test_per_box),0 from stock_in p,item_info i
+	where i.item_code=p.item_code
+	group by p.item_code,i.item_name
+	
+	
+	
+	
+	insert into #Stk_Balance
+	select distinct a.item_code,b.item_name,0,qty=sum(a.item_qty) from stock_out a,item_info b
+	where a.item_code=b.item_code
+	group by a.item_code,b.item_name
+	
+	select Item_code,Name_of_reagent,pur_qty=sum(pur_qty),itm_issue=sum(itm_issue),
+	Balance=(sum(pur_qty)-sum(itm_issue)) from #Stk_Balance
+	group by Item_code,Name_of_reagent
+
+END
+
+SET NOCOUNT OFF

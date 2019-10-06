@@ -1,0 +1,62 @@
+
+
+CREATE    PROCEDURE Select_VAT_Pat 
+
+@status int,
+@StDate datetime,
+@EdDate datetime
+
+AS
+set nocount on
+
+if @status=1
+begin
+	
+---part 1--
+--drop table #pat_info_sub1
+select pat_id,test_rate=sum(test_rate) into #pat_info_sub1 
+from pat_info_sub1 group by pat_id
+
+--end part-1
+---part 2--
+--drop table #Final
+	select a.pat_id,a.pat_id1,a.pat_name Patient_Name,a.refer_code,
+	a.vat_amt,s.test_rate,Amount=(a.vat_amt+s.test_rate),
+	b.doc_name Doctor_Name 
+	into #Final from pat_info_main a,doctor_info b,#pat_info_sub1 s
+	where a.refer_code=b.refer_code and a.pat_id=s.pat_id
+	and refer_type='0' 
+	and dt1 between @StDate and @EdDate
+	select pat_id,pat_id1,Patient_Name,Doctor_Name,Amount from #Final order by pat_id1
+--end part 2--
+end
+
+if @status=2
+begin
+	
+---part 1--
+--drop table #pat_info_sub1N
+	select pat_id,test_rate=sum(test_rate) into #pat_info_sub1N 
+	from pat_info_sub1_VAT group by pat_id
+
+--end part-1
+---part 2--
+--drop table #Final1
+	select a.pat_id,a.pat_name Patient_Name,a.refer_code,
+	a.vat_amt,s.test_rate,Amount=(a.vat_amt+s.test_rate),
+	b.doc_name Doctor_Name 
+	into #Final1 from pat_info_main_VAT a,doctor_info b,#pat_info_sub1N s
+	where a.refer_code=b.refer_code and a.pat_id=s.pat_id
+	and refer_type='0' 
+	and dt1 between @StDate and @EdDate
+	select pat_id,Patient_Name,Doctor_Name,Amount from #Final1
+--end part 2--
+
+end
+
+set nocount off
+
+
+
+
+GO

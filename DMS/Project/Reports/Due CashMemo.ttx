@@ -1,0 +1,29 @@
+pat_id		Number		
+m_code		String	10	
+s_code		String	10	
+s_name		String	60	
+test_rate	Currency		
+delv_dt		Date		
+uid		String	10	
+usr_name	String	200	
+CDt_TM		Date		
+Booth		String	2	
+pat_name	String	100	
+Sex		String	10	
+Age		String	10
+Agetext		String	50	
+Address		String	200	
+Phone		String	25
+email		String	25	
+vat_per		Currency		
+vat_amt		Currency		
+Discount	Currency		
+Doctor_Name	String	200	
+Advance		Currency		
+Coll_Fee_Sum	Currency		
+Total_Rate	Currency		
+Total_Amt	Currency		
+Due		Currency		
+pat_id1		String	50	
+refer_type	String	10	
+cons		String	300	

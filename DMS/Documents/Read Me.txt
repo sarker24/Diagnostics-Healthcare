@@ -1,0 +1,9 @@
+---After creating the tables (Permit,Soft_bag and Micropass) 
+---execute the folloing procedures...
+
+-----------------------------------------------------------
+
+exec pro_security_entry
+exec pro_pass_entry
+exec pro_Soft_Security1
+exec Vat_Setup

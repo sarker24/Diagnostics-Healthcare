@@ -1,0 +1,7 @@
+m_code	String	20	
+m_name	String	100	
+s_code	String	20	
+s_name	String	200	
+tot_sub	Number		
+Tot_test	Number		
+rate	Currency		

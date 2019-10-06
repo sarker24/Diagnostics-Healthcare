@@ -1,0 +1,299 @@
+VERSION 5.00
+Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
+Begin VB.Form rEnvelope 
+   BackColor       =   &H00C0B4A9&
+   BorderStyle     =   1  'Fixed Single
+   Caption         =   "Envelope"
+   ClientHeight    =   2085
+   ClientLeft      =   45
+   ClientTop       =   330
+   ClientWidth     =   4830
+   Icon            =   "rEnvelope.frx":0000
+   KeyPreview      =   -1  'True
+   LinkTopic       =   "Form1"
+   LockControls    =   -1  'True
+   MaxButton       =   0   'False
+   MinButton       =   0   'False
+   ScaleHeight     =   2085
+   ScaleWidth      =   4830
+   StartUpPosition =   1  'CenterOwner
+   Begin VB.ComboBox ComTest_type 
+      Height          =   315
+      ItemData        =   "rEnvelope.frx":000C
+      Left            =   1230
+      List            =   "rEnvelope.frx":001F
+      TabIndex        =   0
+      Top             =   300
+      Width           =   1485
+   End
+   Begin VB.ComboBox ComPaid_Type 
+      Height          =   315
+      ItemData        =   "rEnvelope.frx":0057
+      Left            =   2760
+      List            =   "rEnvelope.frx":0064
+      Style           =   2  'Dropdown List
+      TabIndex        =   2
+      Top             =   690
+      Width           =   1815
+   End
+   Begin VB.TextBox txtPat_ID 
+      Height          =   315
+      Left            =   1230
+      TabIndex        =   1
+      Top             =   690
+      Width           =   1455
+   End
+   Begin MSAdodcLib.Adodc Adodc1 
+      Height          =   330
+      Left            =   2790
+      Top             =   90
+      Visible         =   0   'False
+      Width           =   1215
+      _ExtentX        =   2143
+      _ExtentY        =   582
+      ConnectMode     =   0
+      CursorLocation  =   3
+      IsolationLevel  =   -1
+      ConnectionTimeout=   15
+      CommandTimeout  =   30
+      CursorType      =   3
+      LockType        =   3
+      CommandType     =   8
+      CursorOptions   =   0
+      CacheSize       =   50
+      MaxRecords      =   0
+      BOFAction       =   0
+      EOFAction       =   0
+      ConnectStringType=   1
+      Appearance      =   1
+      BackColor       =   -2147483643
+      ForeColor       =   -2147483640
+      Orientation     =   0
+      Enabled         =   -1
+      Connect         =   "Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=DIAGNOSTIC;Data Source=EJAZ"
+      OLEDBString     =   "Provider=SQLOLEDB.1;Persist Security Info=False;User ID=sa;Initial Catalog=DIAGNOSTIC;Data Source=EJAZ"
+      OLEDBFile       =   ""
+      DataSourceName  =   ""
+      OtherAttributes =   ""
+      UserName        =   ""
+      Password        =   ""
+      RecordSource    =   ""
+      Caption         =   "Adodc1"
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "MS Sans Serif"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      _Version        =   393216
+   End
+   Begin VB.Label lblSex 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Sex"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00808000&
+      Height          =   300
+      Left            =   2880
+      TabIndex        =   6
+      Top             =   1530
+      Width           =   465
+   End
+   Begin VB.Label lblAge 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Age"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00808000&
+      Height          =   300
+      Left            =   1230
+      TabIndex        =   5
+      Top             =   1530
+      Width           =   495
+   End
+   Begin VB.Label lblPat_Name 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Name of Patient"
+      BeginProperty Font 
+         Name            =   "MS Sans Serif"
+         Size            =   12
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00808000&
+      Height          =   300
+      Left            =   1230
+      TabIndex        =   4
+      Top             =   1140
+      Width           =   1950
+   End
+   Begin VB.Label Label2 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Patient's  ID"
+      ForeColor       =   &H00FF0000&
+      Height          =   195
+      Left            =   270
+      TabIndex        =   3
+      Top             =   750
+      Width           =   855
+   End
+End
+Attribute VB_Name = "rEnvelope"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Dim st As String
+Dim IntStatus As Integer
+
+ 
+Private Sub cmdClose_Click()
+    Unload Me
+End Sub
+Private Sub ComPaid_Type_KeyPress(KeyAscii As Integer)
+
+If KeyAscii = 13 Then
+
+    If txtPat_ID = "" Then Exit Sub
+    
+            Dim Report100 As New Envelope
+            Dim StrPat_ID As String
+            Dim strM_Code As String
+            Dim strS_Code As String
+            
+           
+            
+            '--------------------------------------------------------------------
+            Report100.FormulaFields.Item(1).text = Chr(34) & txtPat_ID.text & Chr(34)
+            Report100.FormulaFields.Item(2).text = Chr(34) & lblPat_Name & Chr(34)
+            Report100.FormulaFields.Item(3).text = Chr(34) & lblAge & Chr(34)
+            Report100.FormulaFields.Item(4).text = Chr(34) & lblSex & Chr(34)
+            Report100.FormulaFields.Item(5).text = Chr(34) & ComPaid_Type & Chr(34)
+            Report100.FormulaFields.Item(6).text = Chr(34) & ComTest_type & Chr(34)
+           
+            '--------------------------------------------------------------------
+
+            
+            
+            Report100.DiscardSavedData
+            rs.Open "exec Search_Pat_ID 2,'" & Trim(txtPat_ID.text) & "',''", strcn.Connection
+            Report100.Database.SetDataSource rs
+            
+            Report100.PrintOut
+            rs.Close
+            
+    txtPat_ID.SetFocus
+    
+End If
+
+End Sub
+
+Private Sub Form_KeyPress(KeyAscii As Integer)
+    If KeyAscii = 13 Then
+       SendKeys Chr(9)
+    End If
+    
+    If KeyAscii = 27 Then
+        Unload Me
+    End If
+    
+End Sub
+
+Private Sub Form_Load()
+    'Com_Name
+    ComPaid_Type = "Paid"
+    
+End Sub
+
+'Private Sub Com_Name()
+'    If Trim(txtComp_Name.Text) = 0 Then Exit Sub
+'
+'    'Dim stt As String
+'    Adodc1.connectionstring = strcn.Connection
+'
+'    st = "select * from Company_Info "
+'    Adodc1.RecordSource = st
+'    Adodc1.Refresh
+'    If Adodc1.Recordset.RecordCount > 0 Then
+'        txtComp_Name = Adodc1.Recordset!comp_name
+'        txtAddr = Adodc1.Recordset!addr
+'
+'    'Else
+'
+'    End If
+'End Sub
+Private Sub SearchPatName()
+       con.connectionstring = strcn.Connection
+       con.Open
+       rs.Open "exec Search_Pat_ID 2,'" & Trim(txtPat_ID.text) & "',''", con
+
+       If rs.EOF = False Then
+            lblPat_Name = rs!pat_name
+            lblAge = rs!age
+            lblSex = rs!Sex
+        Else
+            MsgBox "Invalid Patient ID"
+            txtPat_ID = ""
+            txtPat_ID.SetFocus
+       End If
+       rs.Close
+       con.Close
+
+End Sub
+
+Private Sub SearchStatus()
+       con.connectionstring = strcn.Connection
+       con.Open
+       rs.Open "exec Search_Pat_ID2 1,'" & Trim(txtPat_ID.text) & "',''", con
+
+       If rs.EOF = False Then
+            IntStatus = rs!Status
+       End If
+       rs.Close
+       con.Close
+
+End Sub
+
+Private Sub txtPat_ID_LostFocus()
+
+If Me.txtPat_ID = "" Then Exit Sub
+    SearchPatName
+    SearchStatus
+    
+    If IntStatus = 1 Then
+        ComPaid_Type.text = "COMPLIMENTARY"
+    End If
+    
+    If IntStatus = 2 Then
+        ComPaid_Type.text = "PAID"
+    End If
+    
+    If IntStatus = 3 Then
+        ComPaid_Type.text = "DUE"
+    End If
+    
+End Sub

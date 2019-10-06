@@ -1,0 +1,57 @@
+Sl_No	Number		
+Date	Date		
+Pat_ID	String	50	
+Pat_Name	String	50	
+Total	Number		
+Path	Number		
+SPath	Number		
+Histo	Number		
+Xray	Number		
+Ecg	Number		
+Usg	Number		
+Echo	Number		
+Endo	Number		
+Dopl	Number		
+Type	String	25	
+Comm_Per	Number		
+Vat	Number		
+Disc	Number		
+Coll_Fee	Number		
+Adv_coll	Number		
+Due_Coll	Number		
+Test_Rate	Number		
+Ref_Code	String	40	
+Doc_Name	String	500	
+Doc_Address	String	500	
+Doc_Phone	String	50	
+Doc_fax	String	60	
+Path_per	Number		
+Spath_per	Number		
+Histo_per	Number		
+Xray_per	Number		
+Ecg_per	Number		
+Usg_per	Number		
+Echo_per	Number		
+Endo_per	Number		
+Dopl_per	Number		
+Due	Number		
+Ori_path	Number		
+Ori_Spath	Number		
+Ori_Histo	Number		
+Ori_Xray	Number		
+Ori_Ecg	Number		
+Ori_Usg	Number		
+Ori_Echo	Number		
+Ori_Endo	Number		
+Ori_Dopl	Number		
+Avg_per	Number		
+Pat_Id1	String	50	
+Ori_Path1	Number		
+Ori_Spath1	Number		
+Ori_Histo1	Number		
+Ori_Xray1	Number		
+Ori_Ecg1	Number		
+Ori_Usg1	Number		
+Ori_Echo1	Number		
+Ori_Endo1	Number		
+Ori_Dopl1	Number		

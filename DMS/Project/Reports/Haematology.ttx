@@ -1,0 +1,35 @@
+pat_id		Number		
+m_code		String	10	
+s_code		String	10	
+s_name		String	60	
+Field1		String 1000
+Field2		String 1000
+Field3		String 1000
+Field4		String 1000
+Field5		String 1000
+Field6		String 1000
+Field7		String 1000
+Field8		String 1000
+Field9		String 1000
+Field10		String 1000
+Field11		String 1000
+Field12		String 1000
+Field13		String 1000
+Field14		String 1000
+Field15		String 1000
+uid		String	10	
+usr_name	String	200
+Print_date	Date
+Type		String 10
+delv_dt		Date
+pat_name	String	100	
+Sex		String	10	
+Age		String	10	
+Address		String	200	
+Phone		String	25
+fax		String 50
+email		String	25
+rec_date 	date		
+Doctor_Name	String	200	
+pat_id1		String	50	
+cons		String	300	

@@ -1,0 +1,28 @@
+Line 59: Class MSComCtl2.DTPicker of control stDT_TM was not a loaded control class.
+Line 74: Class MSComCtl2.DTPicker of control stDt was not a loaded control class.
+Line 86: Class MSComCtl2.DTPicker of control edDT_TM was not a loaded control class.
+Line 101: Class MSComCtl2.DTPicker of control edDt was not a loaded control class.
+Line 66: The property name _ExtentX in stDT_TM is invalid.
+Line 67: The property name _ExtentY in stDT_TM is invalid.
+Line 68: The property name _Version in stDT_TM is invalid.
+Line 69: The property name CustomFormat in stDT_TM is invalid.
+Line 70: The property name Format in stDT_TM is invalid.
+Line 71: The property name UpDown in stDT_TM is invalid.
+Line 72: The property name CurrentDate in stDT_TM is invalid.
+Line 80: The property name _ExtentX in stDt is invalid.
+Line 81: The property name _ExtentY in stDt is invalid.
+Line 82: The property name _Version in stDt is invalid.
+Line 83: The property name Format in stDt is invalid.
+Line 84: The property name CurrentDate in stDt is invalid.
+Line 93: The property name _ExtentX in edDT_TM is invalid.
+Line 94: The property name _ExtentY in edDT_TM is invalid.
+Line 95: The property name _Version in edDT_TM is invalid.
+Line 96: The property name CustomFormat in edDT_TM is invalid.
+Line 97: The property name Format in edDT_TM is invalid.
+Line 98: The property name UpDown in edDT_TM is invalid.
+Line 99: The property name CurrentDate in edDT_TM is invalid.
+Line 107: The property name _ExtentX in edDt is invalid.
+Line 108: The property name _ExtentY in edDt is invalid.
+Line 109: The property name _Version in edDt is invalid.
+Line 110: The property name Format in edDt is invalid.
+Line 111: The property name CurrentDate in edDt is invalid.

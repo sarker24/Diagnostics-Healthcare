@@ -1,0 +1,12 @@
+Line 83: Class MSComCtl2.DTPicker of control EdDate was not a loaded control class.
+Line 95: Class MSComCtl2.DTPicker of control StDate was not a loaded control class.
+Line 89: The property name _ExtentX in EdDate is invalid.
+Line 90: The property name _ExtentY in EdDate is invalid.
+Line 91: The property name _Version in EdDate is invalid.
+Line 92: The property name Format in EdDate is invalid.
+Line 93: The property name CurrentDate in EdDate is invalid.
+Line 101: The property name _ExtentX in StDate is invalid.
+Line 102: The property name _ExtentY in StDate is invalid.
+Line 103: The property name _Version in StDate is invalid.
+Line 104: The property name Format in StDate is invalid.
+Line 105: The property name CurrentDate in StDate is invalid.

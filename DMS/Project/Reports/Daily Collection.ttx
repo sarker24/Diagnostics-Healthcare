@@ -1,0 +1,9 @@
+VID	Number		
+AHead	String	50	
+RDate	Date		
+Debit	Currency		
+Credit	Currency		
+AMode	String	10	
+Description	String	100
+strTime String 10	
+UName	String	10	

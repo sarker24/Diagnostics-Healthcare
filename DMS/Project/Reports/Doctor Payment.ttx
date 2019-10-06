@@ -1,0 +1,8 @@
+SerialNo	Number		
+PDate	Date		
+Refer_Code	String	10	
+Doc_Name	String	250	
+Amount	Currency		
+Pay_To	String	15	
+UName	String	15	
+StrTime	String	10	

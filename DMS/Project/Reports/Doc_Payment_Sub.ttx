@@ -1,0 +1,6 @@
+Pdate	Date		
+Refcode	String	20	
+Docname	String	200	
+Paidto	String	50	
+Paidby	String	50	
+Anount	Currency		
